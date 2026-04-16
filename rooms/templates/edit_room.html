@@ -2,20 +2,27 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-<div class="container mt-5">
-    <div class="card p-4 shadow">
-        <h3>Edit Room: {{ room.room_number }}</h3>
-        <hr>
-        <form method="POST" novalidate>
-            {% csrf_token %}
-            
-            {{ form|crispy }}
-
-            <div class="mt-4">
-                <button type="submit" class="btn btn-warning">Update Room</button>
-                <a href="{% url 'rooms_list' %}" class="btn btn-secondary">Cancel</a>
+<div class="row justify-content-center mt-5">
+    <div class="col-md-6">
+        <div class="card form-card">
+            <div class="card-header form-header-edit">
+                <h4 class="mb-0">Edit Room: {{ room.room_number }}</h4>
             </div>
-        </form>
+            <div class="card-body p-4">
+                <form method="POST" novalidate>
+                    {% csrf_token %}
+                    
+                    {{ form|crispy }}
+
+                    <div class="d-grid gap-2 mt-4">
+                        <button type="submit" class="btn btn-update-matte">
+                            Save Changes
+                        </button>
+                        <a href="{% url 'view_room' room.pk %}" class="btn btn-link text-muted">Discard Changes</a>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
 </div>
 {% endblock %}
