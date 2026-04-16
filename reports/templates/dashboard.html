@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2 class="mb-4">Hotel Performance Dashboard</h2>
+
+<div class="row">
+    <div class="col-md-4 mb-4">
+        <div class="card bg-primary text-white shadow">
+            <div class="card-body text-center">
+                <h6>Total Revenue</h6>
+                <h2 class="fw-bold">Shs {{ total_revenue }}</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4 mb-4">
+        <div class="card bg-success text-white shadow">
+            <div class="card-body text-center">
+                <h6>Occupancy Rate</h6>
+                <h2 class="fw-bold">{{ occupied_rooms }} / {{ total_rooms }} Rooms</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4 mb-4">
+        <div class="card bg-info text-white shadow">
+            <div class="card-body text-center">
+                <h6>Total Guests</h6>
+                <h2 class="fw-bold">{{ total_guests }}</h2>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-4 mb-4">
+    <div class="card bg-warning text-dark shadow border-0">
+        <div class="card-body text-center">
+            <h6>Revenue for Today ({{ today|date:"d M" }})</h6>
+            <h2 class="fw-bold">Shs {{ daily_revenue }}</h2>
+        </div>
+    </div>
+</div>
+
+<hr>
+
+<div class="row mt-4">
+    <div class="col-md-6">
+        <h4>Room Availability Breakdown</h4>
+        <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                Available Rooms
+                <span class="badge bg-success rounded-pill">{{ available_rooms }}</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                Occupied Rooms
+                <span class="badge bg-danger rounded-pill">{{ occupied_rooms }}</span>
+            </li>
+        </ul>
+    </div>
+</div>
+{% endblock %}
