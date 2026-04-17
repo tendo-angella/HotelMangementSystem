@@ -1,70 +1,64 @@
+/* --- NAVIGATION & BRAND STYLES --- */
 
-.navbar {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    padding-top: 12px;
-    padding-bottom: 12px;
-    transition: all 0.3s ease-in-out;
+.custom-nav {
+    background-color: #1a1d20 !important; /* Deep Matte Charcoal */
+    padding: 15px 0;
+    border-bottom: 3px solid #2d5a27; /* Forest Green accent line */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-
-.navbar-brand {
-    font-size: 1.5rem;
-    font-weight: bold;
-    letter-spacing: 1px;
-    color: #f8f9fa !important;
+/* Logo Styling */
+.nav-brand-style {
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    font-size: 1.4rem;
+    color: #ffffff !important;
 }
 
+.nav-brand-style span {
+    color: #2d5a27; /* The 'Admin' part turns green */
+}
 
-.navbar-nav .nav-link {
-    font-size: 1rem;
-    margin-right: 15px;
-    color: #ddd !important;
+/* Underline Animation for Links */
+.nav-link-custom {
+    font-weight: 500;
+    color: #adb5bd !important;
+    margin: 0 10px;
     position: relative;
     transition: color 0.3s ease;
 }
 
-
-.navbar-nav .nav-link:hover {
+.nav-link-custom:hover {
     color: #ffffff !important;
 }
 
+/* The 'Active' indicator - a clean line below the text */
+.nav-link-custom.active {
+    color: #ffffff !important;
+    font-weight: 700;
+}
 
-.navbar-nav .nav-link::after {
-    content: "";
+.nav-link-custom.active::after {
+    content: '';
     position: absolute;
-    width: 0%;
-    height: 2px;
+    width: 100%;
+    height: 3px;
+    background-color: #2d5a27; /* Match our theme green */
+    bottom: -5px;
     left: 0;
-    bottom: 0;
-    background-color: #0d6efd; 
-    transition: width 0.3s ease-in-out;
+    border-radius: 2px;
 }
 
-.navbar-nav .nav-link:hover::after {
-    width: 100%;
-}
-
-
-.navbar-nav .nav-link.active {
-    color: #ffffff !important;
-    font-weight: bold;
-}
-
-.navbar-nav .nav-link.active::after {
-    width: 100%;
-}
-
-
-.navbar.bg-dark {
-    background: linear-gradient(90deg, #1c1c1c, #343a40);
-}
-
-
-@media (max-width: 768px) {
-    .navbar-nav .nav-link {
-        margin-right: 0;
-        padding: 10px 0;
-    }
+/* Hover effect for non-active links */
+.nav-link-custom:not(.active):hover::after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 2px;
+    background-color: #6c757d;
+    bottom: -5px;
+    left: 25%;
+    transition: 0.3s;
 }
 
 /* --- LANDING PAGE CUSTOM STYLES --- */
@@ -519,4 +513,48 @@ label {
 .table-admin th.text-end, 
 .table-admin td.text-end {
     padding-right: 25px !important;
+}
+
+/* --- REPORTS & DASHBOARD STYLES --- */
+
+/* The Report Card Structure */
+.report-card {
+    border: none !important;
+    border-radius: 8px !important;
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05) !important;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.report-card:hover {
+    transform: translateY(-5px);
+}
+
+.report-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #6c757d;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.report-value {
+    color: #212529;
+    font-weight: 800;
+    margin-bottom: 0;
+}
+
+/* Accent Borders for categorization */
+.accent-revenue { border-top: 5px solid #2d5a27 !important; } /* Green */
+.accent-occupancy { border-top: 5px solid #0d6efd !important; } /* Blue */
+.accent-guests { border-top: 5px solid #6f42c1 !important; } /* Purple */
+.accent-today { border-top: 5px solid #fd7e14 !important; } /* Orange */
+
+/* Small text within values */
+.report-value small {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: #adb5bd;
 }
