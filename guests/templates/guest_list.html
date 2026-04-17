@@ -3,19 +3,17 @@
 {% block content %}
 <div class="container mt-4">
     <div class="d-flex justify-content-between align-items-center mb-4">
-        <h2>Guest Directory</h2>
-        <a href="{% url 'register_guest' %}" class="btn btn-primary">+ Register New Guest</a>
+        <h2 class="page-heading">Guest List</h2>
+        <a href="{% url 'register_guest' %}" class="btn btn-action-success">+ Register New Guest</a>
     </div>
 
-    <div class="card shadow-sm">
+    <div class="card table-card">
         <div class="card-body p-0">
-            <table class="table table-hover mb-0">
-                <thead class="table-dark">
+            <table class="table table-admin table-hover mb-0">
+                <thead>
                     <tr>
                         <th>Full Name</th>
-                        <th>Phone Number</th>
-                        <th>Email</th>
-                        <th>ID Number</th>
+                        <th>Contact Details</th> <th>ID Number</th>
                         <th>Assigned Room</th>
                         <th class="text-center">Actions</th>
                     </tr>
@@ -23,24 +21,28 @@
                 <tbody>
                     {% for guest in guests %}
                     <tr>
-                        <td>{{ guest.first_name }} {{ guest.last_name }}</td>
-                        <td>{{ guest.phone_number }}</td>
-                        <td>{{ guest.email }}</td>
-                        <td>{{ guest.id_number }}</td>
+                        <td class="guest-name">
+                            {{ guest.first_name }} {{ guest.last_name }}
+                        </td>
+                        <td>
+                            <div class="small fw-bold">{{ guest.phone_number }}</div>
+                            <div class="small text-muted">{{ guest.email }}</div>
+                        </td>
+                        <td class="id-text">{{ guest.id_number }}</td>
                         <td>
                             {% if guest.room %}
-                                <span class="badge bg-info text-dark">Room {{ guest.room.room_number }}</span>
+                                <span class="room-tag">Room {{ guest.room.room_number }}</span>
                             {% else %}
-                                <span class="text-muted">Unassigned</span>
+                                <span class="status-badge available">Unassigned</span>
                             {% endif %}
                         </td>
                         <td class="text-center">
-                            <a href="{% url 'guest_detail' guest.pk %}" class="btn btn-sm btn-outline-primary">View</a>
+                            <a href="{% url 'guest_detail' guest.pk %}" class="btn btn-sm btn-action-outline">View Profile</a>
                         </td>
                     </tr>
                     {% empty %}
                     <tr>
-                        <td colspan="6" class="text-center py-4 text-muted">
+                        <td colspan="5" class="text-center py-5 text-muted">
                             No guests found. Click "Register New Guest" to add one.
                         </td>
                     </tr>

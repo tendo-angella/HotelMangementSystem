@@ -384,3 +384,113 @@ label {
 .btn-link.text-muted:hover {
     color: #212529 !important;
 }
+
+/* --- GUEST LIST STYLES --- */
+
+/* Make Guest names stand out */
+.guest-name {
+    font-weight: 700;
+    color: #1a1d20;
+    font-size: 1.05rem;
+}
+
+/* ID numbers often look best in a slightly lighter, clean font */
+.id-text {
+    color: #6c757d;
+    font-family: Arial, sans-serif;
+    letter-spacing: 0.5px;
+}
+
+/* Custom Room Tag (Replacing the bright blue badge) */
+.room-tag {
+    background-color: #e9ecef; /* Very light gray */
+    color: #495057;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    border: 1px solid #dee2e6;
+}
+
+/* Reusing the table styles we built for rooms ensures consistency */
+.table-admin td {
+    vertical-align: middle; /* Keeps the contact info aligned with the name */
+}
+
+
+/* --- GUEST VIEW STYLES --- */
+
+.guest-card {
+    border: none !important;
+    border-radius: 12px !important;
+    box-shadow: 0 4px 25px rgba(0,0,0,0.06) !important;
+    background-color: #ffffff;
+}
+
+.guest-header {
+    background-color: #1a1d20 !important; /* Matte Charcoal */
+    color: white !important;
+    padding: 20px !important;
+}
+
+.section-title {
+    font-size: 0.9rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #495057;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.info-group {
+    margin-bottom: 15px;
+}
+
+.info-group label {
+    font-size: 0.7rem;
+    color: #adb5bd;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 2px;
+}
+
+.info-group p {
+    margin-bottom: 0;
+    font-size: 1rem;
+    color: #212529;
+}
+
+/* Room Assignment Box (Professional Muted Version) */
+.assignment-box {
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+.assignment-box label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.active-room {
+    background-color: #f1f8ff; /* Very soft muted blue */
+    border-left: 4px solid #0d6efd;
+    color: #084298;
+}
+
+.no-room {
+    background-color: #f8f9fa;
+    border-left: 4px solid #dee2e6;
+    color: #6c757d;
+}
+
+.guest-footer {
+    background-color: #f8f9fa !important;
+    padding: 15px 25px !important;
+    border-top: 1px solid #dee2e6 !important;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
