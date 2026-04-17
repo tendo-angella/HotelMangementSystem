@@ -494,3 +494,29 @@ label {
     justify-content: flex-end;
     gap: 10px;
 }
+
+/* --- PAYMENT LIST STYLES --- */
+
+/* Currency text should look clean and distinct */
+.currency-text {
+    color: #2d5a27; /* Forest Green */
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.1rem;
+}
+
+/* Method label (Cash, Mobile Money, etc.) */
+.method-label {
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    color: #6c757d;
+    text-transform: uppercase;
+}
+
+/* Ensure the text-end alignment works properly with our padding */
+.table-admin th.text-end, 
+.table-admin td.text-end {
+    padding-right: 25px !important;
+}
