@@ -1,4 +1,4 @@
-# 🏨 ParkEase: Hotel Management System
+# 🏨 Hotel Management System
 
 An integrated management system built with **Python**, **Django**, and **Bootstrap 5**. This system allows hotel staff to manage room availability, register guests, and handle service bookings through a clean, minimalist dashboard.
 
