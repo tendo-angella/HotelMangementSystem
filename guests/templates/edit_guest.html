@@ -2,19 +2,23 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-<div class="row justify-content-center mt-4">
+<div class="row justify-content-center mt-5">
     <div class="col-md-8">
-        <div class="card shadow">
-            <div class="card-header bg-warning text-dark">
-                <h5 class="mb-0">Edit Profile: {{ guest.first_name }} {{ guest.last_name }}</h5>
+        <div class="card form-card">
+            <div class="card-header form-header-edit">
+                <h4 class="mb-0">Update Profile: {{ guest.first_name }} {{ guest.last_name }}</h4>
             </div>
-            <div class="card-body">
+            <div class="card-body p-4">
                 <form method="POST" novalidate>
                     {% csrf_token %}
+                    
                     {{ form|crispy }}
-                    <div class="mt-4 d-flex justify-content-between">
-                        <a href="{% url 'guest_list' %}" class="btn btn-secondary">Cancel</a>
-                        <button type="submit" class="btn btn-warning">Update Guest Information</button>
+
+                    <div class="d-grid gap-2 mt-4">
+                        <button type="submit" class="btn btn-update-matte">
+                            Save Changes to Profile
+                        </button>
+                        <a href="{% url 'guest_detail' guest.pk %}" class="btn btn-link text-muted">Discard Changes</a>
                     </div>
                 </form>
             </div>

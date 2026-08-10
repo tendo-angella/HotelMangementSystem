@@ -2,19 +2,26 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-<div class="container mt-4">
-    <div class="card shadow-sm">
-        <div class="card-header bg-primary text-white">
-            <h5 class="mb-0">New Guest Registration</h5>
-        </div>
-        <div class="card-body">
-            <form method="POST" novalidate>
-                {% csrf_token %}
-                {{ form|crispy }}
-                <div class="mt-3">
-                    <button type="submit" class="btn btn-success w-100">Save Guest Profile</button>
-                </div>
-            </form>
+<div class="row justify-content-center mt-5">
+    <div class="col-md-6">
+        <div class="card form-card">
+            <div class="card-header form-header">
+                <h4 class="mb-0">Guest Registration</h4>
+            </div>
+            <div class="card-body p-4">
+                <form method="POST" novalidate>
+                    {% csrf_token %}
+                    
+                    {{ form|crispy }}
+                    
+                    <div class="d-grid gap-2 mt-4">
+                        <button type="submit" class="btn btn-save-matte">
+                            Register Guest
+                        </button>
+                        <a href="{% url 'guest_list' %}" class="btn btn-link text-muted">Return to List</a>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 </div>

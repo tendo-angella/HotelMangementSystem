@@ -51,3 +51,6 @@ def delete_room(request, pk):
     
     # 3. Immediately go back to the list page
     return redirect('rooms_list')
+
+def admin_home(request):
+    return render(request, 'admin_home.html')

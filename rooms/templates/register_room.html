@@ -4,17 +4,25 @@
 
 {% block content %}
 
-<div class="row justify-content-center">
+<div class="row justify-content-center mt-5">
   <div class="col-md-6">
-    <div class="card shadow">
-      <div class="card-header bg-primary text-white">
+    <div class="card form-card">
+      <div class="card-header form-header">
         <h4 class="mb-0">Register New Room</h4>
       </div>
-      <div class="card-body">
+      <div class="card-body p-4">
 
         <form method="POST" novalidate>
-          {% csrf_token %} {{ form|crispy }}
-          <button type="submit" class="btn btn-success">Save</button>
+          {% csrf_token %} 
+          
+          {{ form|crispy }}
+          
+          <div class="d-grid gap-2 mt-4">
+            <button type="submit" class="btn btn-save-matte">
+                Save Room Details
+            </button>
+            <a href="{% url 'rooms_list' %}" class="btn btn-link text-muted">Cancel</a>
+          </div>
         </form>
 
       </div>
